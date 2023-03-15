@@ -2,15 +2,25 @@ import React, { useState } from 'react';
 import { AppUI } from './AppUI';
 
 
-const defaultTodos = [
-  {text: 'Learn English', completed: false},
-  {text: 'Learn React', completed: false},
-  {text: 'Work', completed: false}
-]
+// const defaultTodos = [
+//   {text: 'Learn English', completed: false},
+//   {text: 'Learn React', completed: false},
+//   {text: 'Work', completed: false}
+// ]
 
 
 function App() {
-  const [todos, setTodos] = useState(defaultTodos)
+  const localStorageTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
+
+  if(!localStorageTodos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos);
+  }
+
+  const [todos, setTodos] = useState(parsedTodos)
   const [searchValue, setSearchValue] = useState('')
   const completedTodos = todos.filter(todo => !!todo.completed).length
   const totalTodos = todos.length
