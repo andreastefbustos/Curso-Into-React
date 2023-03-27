@@ -7,6 +7,7 @@ import { TodoList } from "../TodoList";
 import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
+import { EmptySearch } from '../EmptySearch';
 import { TodoItem } from "../TodoItem";
 import { TodoForm } from "../TodoForm";
 import { CreateTodoButton } from "../CreateTodoButton";
@@ -52,9 +53,13 @@ function App() {
         error={error}
         loading={loading}
         searchedTodos={searchedTodos}
+        totalTodos={totalTodos}
+        searchText={searchValue}
         onError={() => <TodosError />}
         onLoading={() => <TodosLoading/>}
         onEmptyTodos={() => <EmptyTodos/>}
+        onEmptySearchResults={() => <EmptySearch searchText={searchValue}/>}
+        
         render={todo => (
           <TodoItem
             key={todo.text}
@@ -64,7 +69,17 @@ function App() {
             onDelete={() => deleteTodo(todo.text)}
           />
         )}
-      />
+      >
+        {todo => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        )}
+      </TodoList>
       
       {!! openModal && (
         <Modal>

@@ -15,6 +15,7 @@ function UseTodos(){
       const completedTodos = todos.filter(todo => !!todo.completed).length;
       const totalTodos = todos.length;
     
+
       let searchedTodos = [];
     
       if (!searchValue.length >= 1) {
