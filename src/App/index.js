@@ -12,6 +12,7 @@ import { TodoItem } from "../TodoItem";
 import { TodoForm } from "../TodoForm";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
 
 // const defaultTodos = [
@@ -93,6 +94,9 @@ function App() {
       <CreateTodoButton 
         setOpenModal= {setOpenModal}
       />
+
+      <ChangeAlertWithStorageListener />
+
     </React.Fragment>
   );
 }
