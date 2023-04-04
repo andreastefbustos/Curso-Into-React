@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Curso-Into-React/static/css/main.accfbe0d.css",
+    "main.js": "/Curso-Into-React/static/js/main.f9eb4cb8.js",
+    "index.html": "/Curso-Into-React/index.html",
+    "main.accfbe0d.css.map": "/Curso-Into-React/static/css/main.accfbe0d.css.map",
+    "main.f9eb4cb8.js.map": "/Curso-Into-React/static/js/main.f9eb4cb8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.accfbe0d.css",
+    "static/js/main.f9eb4cb8.js"
+  ]
+}
